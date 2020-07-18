@@ -3,11 +3,14 @@ package utils;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+
+import com.browserstack.local.Local;
 
 public class Base {
 
@@ -17,7 +20,7 @@ public class Base {
 
     protected WebDriver driver;
 
-    public WebDriver drive() throws IOException {
+    public WebDriver drive() throws Exception {
 
 	switch (getOS()) {
 	case "Windows 10":
@@ -33,7 +36,7 @@ public class Base {
 
     }
 
-    public WebDriver selectBrowserWin10() throws IOException {
+    public WebDriver selectBrowserWin10() throws Exception {
 
 	Properties obj = new Properties();
 	FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + "/config.properties");
@@ -43,7 +46,7 @@ public class Base {
 
 	switch (getBrowser()) {
 	case "Chrome":
-
+	    
 	    DesiredCapabilities caps = new DesiredCapabilities();
 	    caps.setCapability("os", "Windows");
 	    caps.setCapability("os_version", "10");

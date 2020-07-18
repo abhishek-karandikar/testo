@@ -1,0 +1,24 @@
+// parallel.conf.json
+{
+  "server": "hub-cloud.browserstack.com",
+  "user": "abhishekkarandik2",
+  "key": "xCe45NKP1uQQE3bgMGJo",
+
+  "capabilities": {
+    "name": "Bstack-[TestNG] Parallel Test",
+    "browserstack.debug": true
+  },
+
+  "environments": {
+    "chrome": {
+      "browser": "chrome"
+    },
+    "firefox": {
+      "browser": "firefox"
+    },
+    "safari": {
+      "browser": "safari"
+    },
+   
+  }
+}
